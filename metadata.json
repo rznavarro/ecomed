@@ -1,0 +1,6 @@
+{
+  "name": "Ecomed | Centro Médico y Ecografías 5D en Santiago Centro",
+  "description": "Centro médico en Huérfanos 779, Santiago Centro. Ecografías, Ecografía 5D, medicina general, psicología, nutrición, podología y más. Reserva por WhatsApp: +56 9 6229 9667.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="es-CL" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecomed | Centro Médico y Ecografías 5D en Santiago Centro</title>
+    <meta name="description" content="Centro médico en Huérfanos 779, Santiago Centro. Ecografías, Ecografía 5D, medicina general, psicología, nutrición, podología y más. Reserva por WhatsApp: +56 9 6229 9667." />
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:url" content="https://eco-med.cl/" />
+    <meta property="og:title" content="Ecomed — Centro Médico en Santiago Centro" />
+    <meta property="og:description" content="Ecografías, Ecografía 5D y especialidades en Huérfanos 779. Reserva tu hora por WhatsApp." />
+    <meta property="og:image" content="https://eco-med.cl/wp-content/uploads/2022/08/Slide-Eco5D-ECOMED-01-1.jpg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="533" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ecomed — Centro Médico en Santiago Centro" />
+    <meta name="twitter:description" content="Ecografías, Ecografía 5D y especialidades en Huérfanos 779. Reserva tu hora por WhatsApp." />
+    <meta name="twitter:image" content="https://eco-med.cl/wp-content/uploads/2022/08/Slide-Eco5D-ECOMED-01-1.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://eco-med.cl/wp-content/uploads/2022/08/logo-eecomed-web-1030x619.png" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Ecomed",
+      "alternateName": "EcoMed Centro Médico",
+      "image": "https://eco-med.cl/wp-content/uploads/2022/08/logo-eecomed-web-1030x619.png",
+      "logo": "https://eco-med.cl/wp-content/uploads/2022/08/logo-eecomed-web-1030x619.png",
+      "url": "https://eco-med.cl/",
+      "telephone": "+56962299667",
+      "email": "info@eco-med.cl",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Huérfanos 779, Of. 201",
+        "addressLocality": "Santiago",
+        "addressRegion": "Región Metropolitana",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.4385,
+        "longitude": -70.6483
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/eco_med.cl/"
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS Script CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                primary: '#719430',
+                secondary: '#8bba34',
+                dark: '#507210',
+                white: '#ffffff',
+                alt: '#f8f8f8',
+                border: '#ebebeb',
+                black: '#000000',
+                muted: '#969696',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      /* LOCKED COLOR PALETTE ONLY:
+         #719430 (primary)
+         #8bba34 (secondary/hover/accents)
+         #507210 (dark green)
+         #ffffff (white)
+         #f8f8f8 (alt background)
+         #ebebeb (border)
+         #000000 (black)
+         #969696 (muted)
+      */
+      * {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      body {
+        background-color: #ffffff;
+        color: #000000;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      /* Scroll progress bar */
+      #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background-color: #8bba34;
+        width: 0%;
+        z-index: 100;
+        transition: width 0.1s linear;
+      }
+
+      /* Hero giant word clamp */
+      .hero-giant-word {
+        font-size: clamp(76px, 15.5vw, 290px);
+        line-height: 0.85;
+      }
+      @media (max-width: 640px) {
+        .hero-giant-word {
+          font-size: 21vw;
+          line-height: 0.85;
+        }
+      }
+
+      /* Hero Animation Keyframes */
+      @keyframes maskSlideUp {
+        0% {
+          transform: translateY(105%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+
+      @keyframes heroFadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .anim-mask-reveal {
+        display: block;
+        animation: maskSlideUp 900ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+      }
+
+      .anim-hero-tag {
+        opacity: 0;
+        animation: heroFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) 200ms forwards;
+      }
+
+      .anim-hero-h1-1 {
+        opacity: 0;
+        animation: heroFadeUp 650ms cubic-bezier(0.16, 1, 0.3, 1) 280ms forwards;
+      }
+
+      .anim-hero-desc {
+        opacity: 0;
+        animation: heroFadeUp 650ms cubic-bezier(0.16, 1, 0.3, 1) 360ms forwards;
+      }
+
+      .anim-hero-actions {
+        opacity: 0;
+        animation: heroFadeUp 650ms cubic-bezier(0.16, 1, 0.3, 1) 440ms forwards;
+      }
+
+      /* Buttons hover arrow */
+      .btn-arrow {
+        transition: transform 0.2s ease;
+      }
+      .group:hover .btn-arrow,
+      button:hover .btn-arrow,
+      a:hover .btn-arrow {
+        transform: translateX(4px);
+      }
+
+      /* Specialties row hover line & image preview */
+      .specialty-row {
+        position: relative;
+        transition: background-color 0.25s ease, padding 0.25s ease;
+      }
+      .specialty-row::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: #719430;
+        transform: scaleY(0);
+        transform-origin: center;
+        transition: transform 0.25s ease;
+      }
+      @media (min-width: 901px) {
+        .specialty-row:hover {
+          background-color: #f8f8f8;
+        }
+        .specialty-row:hover::before {
+          transform: scaleY(1);
+        }
+      }
+
+      /* Reservation cards expansion on desktop hover */
+      @media (min-width: 901px) {
+        .reserva-card {
+          flex: 1;
+          transition: flex 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+        }
+        .reserva-card:hover {
+          flex: 1.35;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+        }
+      }
+
+      /* Full bleed rectangular image for 5D featured section */
+      .clip-diagonal {
+        clip-path: none;
+      }
+
+      /* Soft fade-in for section titles (opacity + 16px via IntersectionObserver) */
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Respect prefers-reduced-motion */
+      @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-[#ffffff] text-[#000000] antialiased selection:bg-[#8bba34] selection:text-[#000000]">
+
+    <!-- Scroll Progress Indicator (3px in #8bba34) -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Desktop SVG Texture (feTurbulence, 0.03 opacity, multiply) -->
+    <svg class="fixed inset-0 w-full h-full pointer-events-none opacity-[0.03] mix-blend-multiply z-40 hidden md:block" aria-hidden="true">
+      <filter id="noiseFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+    </svg>
+
+    <!-- Floating Top Header -->
+    <header class="fixed top-3 left-0 right-0 z-50 px-4 max-w-[1200px] mx-auto pointer-events-none">
+      <nav id="navbar" class="pointer-events-auto bg-[#ffffff] rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-[#ebebeb] px-4 md:px-6 py-2.5 flex items-center justify-between transition-all duration-300">
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center" aria-label="Ecomed Centro Médico - Ir al inicio">
+          <img 
+            src="https://eco-med.cl/wp-content/uploads/2022/08/logo-eecomed-web-1030x619.png" 
+            alt="Logo Ecomed Centro Médico" 
+            class="h-10 md:h-12 w-auto object-contain"
+            width="80"
+            height="48"
+            loading="eager"
+          />
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+          <a href="#especialidades" class="text-[#000000] hover:text-[#719430] transition-colors">Especialidades</a>
+          <a href="#ecografia-5d" class="text-[#000000] hover:text-[#719430] transition-colors">Ecografía 5D</a>
+          <a href="#reservar" class="text-[#000000] hover:text-[#719430] transition-colors">Cómo reservar</a>
+          <a href="#contacto" class="text-[#000000] hover:text-[#719430] transition-colors">Ubicación</a>
+        </div>
+
+        <!-- Action CTA in Header -->
+        <div class="flex items-center gap-2">
+          <!-- Desktop CTA -->
+          <a 
+            href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora." 
+            target="_blank" 
+            rel="noopener"
+            class="hidden md:inline-flex items-center justify-center bg-[#719430] hover:bg-[#8bba34] text-[#ffffff] hover:text-[#000000] px-5 py-2.5 rounded-full text-sm font-bold transition-all group"
+          >
+            <span>Reservar hora</span>
+            <span class="ml-1.5 btn-arrow">→</span>
+          </a>
+
+          <!-- Mobile Compact CTA -->
+          <a 
+            href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora." 
+            target="_blank" 
+            rel="noopener"
+            class="md:hidden inline-flex items-center justify-center bg-[#719430] hover:bg-[#8bba34] text-[#ffffff] px-4 py-2 rounded-full text-xs font-bold transition-all shadow-sm"
+          >
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pb-24">
+      
+      <!-- SECCIÓN 1: HERO (id="inicio") -->
+      <section id="inicio" class="relative min-h-[100svh] min-h-[640px] bg-[#ffffff] flex flex-col justify-between overflow-hidden pt-24 md:pt-28 pb-4 border-b border-[#ebebeb]">
+        
+        <!-- Hero Content (Upper Section) -->
+        <div class="relative z-10 w-full max-w-[1200px] mx-auto px-5 md:px-8 mt-4 md:mt-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <!-- Columna Texto y CTAs (12 cols móvil, 7 cols desktop) -->
+            <div class="lg:col-span-7">
+              
+              <!-- Etiqueta de Ubicación -->
+              <div class="anim-hero-tag inline-flex items-center gap-2 mb-3 md:mb-4 px-3 py-1 rounded-full bg-[#f8f8f8] border border-[#ebebeb]">
+                <span class="w-2 h-2 rounded-full bg-[#719430]"></span>
+                <p class="text-[#719430] text-xs font-bold tracking-[0.12em] uppercase">
+                  SANTIAGO CENTRO · HUÉRFANOS 779
+                </p>
+              </div>
+
+              <!-- H1 Principal -->
+              <div class="overflow-hidden mb-3 md:mb-4">
+                <h1 class="anim-hero-h1-1 text-[#000000] text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-[-0.03em] leading-[1.04]">
+                  Centro Médico en Santiago Centro
+                </h1>
+              </div>
+
+              <!-- Bajada / Subtítulo -->
+              <p class="anim-hero-desc text-[#000000]/80 text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-6 md:mb-8 max-w-[560px]">
+                Te atendemos en todas las etapas de tu vida, con un servicio cálido, personalizado y seguro.
+              </p>
+
+              <!-- Botones de Acción (Resolución en 390x844 sin scroll) -->
+              <div class="anim-hero-actions flex flex-col sm:flex-row gap-3 w-full max-w-[480px]">
+                <!-- Botón Primario: WhatsApp -->
+                <a 
+                  href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora." 
+                  target="_blank" 
+                  rel="noopener"
+                  class="w-full sm:flex-1 min-h-[52px] bg-[#719430] hover:bg-[#8bba34] text-[#ffffff] hover:text-[#000000] flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-base transition-all duration-200 group shadow-md"
+                >
+                  <span>Reservar hora por WhatsApp</span>
+                  <span class="ml-2 btn-arrow font-extrabold">→</span>
+                </a>
+
+                <!-- Botón Secundario: AgendaPro -->
+                <a 
+                  href="https://agendapro.com/iframe/overview/a089cc8d-e81a-41a0-8583-b0e692bac04f" 
+                  target="_blank" 
+                  rel="noopener"
+                  class="w-full sm:w-auto min-h-[52px] bg-transparent hover:bg-[#f8f8f8] text-[#000000] border-2 border-[#ebebeb] hover:border-[#719430] flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-base transition-all duration-200 group"
+                >
+                  <span>Agendar en línea</span>
+                  <span class="ml-1.5 btn-arrow">↗</span>
+                </a>
+              </div>
+
+              <!-- Horario breve de atención -->
+              <div class="mt-4 text-[#969696] text-xs sm:text-sm font-medium flex items-center gap-2">
+                <svg class="w-4 h-4 text-[#719430] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Lun a Vie 09:00–19:00 · Sáb 09:00–14:00</span>
+              </div>
+
+            </div>
+
+            <!-- Columna Imagen Destacada (Desktop) -->
+            <div class="hidden lg:block lg:col-span-5">
+              <div class="relative rounded-[3px] overflow-hidden shadow-sm border border-[#ebebeb] bg-[#ffffff]">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/Slide-Eco5D-ECOMED-01-1.jpg" 
+                  alt="Ecografía en Ecomed Centro Médico Santiago Centro" 
+                  class="w-full h-auto object-contain rounded-[3px] block"
+                  fetchpriority="high"
+                  decoding="async"
+                  width="800"
+                  height="533"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Giant Word "ECOMED" anclada al borde inferior -->
+        <div class="relative z-10 w-full overflow-hidden mt-6 pointer-events-none select-none">
+          <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+            <div class="overflow-hidden">
+              <span class="hero-giant-word anim-mask-reveal font-extrabold text-[#ebebeb] opacity-80 tracking-[-0.04em] block text-left" aria-hidden="true">
+                ECOMED
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- SECCIÓN 2: ESPECIALIDADES (id="especialidades") -->
+      <section id="especialidades" class="relative bg-[#ffffff] py-20 md:py-28">
+        <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+          
+          <!-- Header de Sección -->
+          <div class="reveal-on-scroll mb-12 md:mb-16">
+            <p class="text-[#969696] text-xs font-bold tracking-[0.12em] uppercase mb-2">
+              ESPECIALIDADES
+            </p>
+            <h2 class="text-[#000000] text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.03em] leading-tight max-w-[700px]">
+              Todo lo que necesitas, en un solo lugar
+            </h2>
+            <p class="text-[#969696] text-sm md:text-base mt-3">
+              Toca cualquier especialidad para consultar disponibilidad y agendar tu hora directamente por WhatsApp.
+            </p>
+          </div>
+
+          <!-- Specialties Floating Preview Container (Desktop Only) -->
+          <div id="specialty-preview" class="hidden md:block fixed pointer-events-none z-30 transition-opacity duration-200 opacity-0" style="width: 280px; height: 200px;">
+            <img 
+              id="specialty-preview-img" 
+              src="" 
+              alt="Especialidad médica" 
+              class="w-full h-full object-cover rounded-[3px] shadow-2xl border-2 border-[#ffffff] -rotate-4"
+              width="280"
+              height="200"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <!-- Specialties Numbered Rows -->
+          <div class="border-t border-[#ebebeb]">
+
+            <!-- 01 Ecografía Médica -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora%20de%20Ecograf%C3%ADa%20M%C3%A9dica." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOGRFIAS.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <!-- Mobile Thumbnail (56x56) -->
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOGRFIAS.jpg" 
+                  alt="Ecografía Médica Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">01</span>
+                <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                  Ecografía Médica
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+            <!-- 02 Ecografías 5D -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20informaci%C3%B3n%20para%20agendar%20una%20Ecograf%C3%ADa%205D." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/ecografia-5d.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/ecografia-5d.jpg" 
+                  alt="Ecografías 5D Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">02</span>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                    Ecografías 5D
+                  </span>
+                  <span class="bg-[#8bba34]/20 text-[#507210] text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">
+                    Destacada
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+            <!-- 03 Medicina General -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora%20de%20Medicina%20General." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOMED-medicina-general.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOMED-medicina-general.jpg" 
+                  alt="Medicina General Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">03</span>
+                <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                  Medicina General
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+            <!-- 04 Traumatología -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora%20de%20Traumatolog%C3%ADa." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/traumatologia-ecomed.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/traumatologia-ecomed.jpg" 
+                  alt="Traumatología Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">04</span>
+                <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                  Traumatología
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+            <!-- 05 Psicología -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora%20de%20Psicolog%C3%ADa." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOMED-psicologia.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOMED-psicologia.jpg" 
+                  alt="Psicología Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">05</span>
+                <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                  Psicología
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+            <!-- 06 Nutrición -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora%20de%20Nutrici%C3%B3n." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOMED-nutricion.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOMED-nutricion.jpg" 
+                  alt="Nutrición Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">06</span>
+                <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                  Nutrición
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+            <!-- 07 Podología -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora%20de%20Podolog%C3%ADa." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOMED-podologia.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/BANNER-ECOMED-podologia.jpg" 
+                  alt="Podología Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">07</span>
+                <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                  Podología
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+            <!-- 08 Masoterapia -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora%20de%20Masoterapia." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/masote.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/masote.jpg" 
+                  alt="Masoterapia Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">08</span>
+                <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                  Masoterapia
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+            <!-- 09 Camillas Ceragem -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora%20de%20Camillas%20Ceragem." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/ceragem-ECOMED.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/ceragem-ECOMED.jpg" 
+                  alt="Camillas Ceragem Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">09</span>
+                <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                  Camillas Ceragem
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+            <!-- 10 Tratamientos faciales -->
+            <a 
+              href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora%20de%20Tratamientos%20faciales." 
+              target="_blank" 
+              rel="noopener"
+              data-preview="https://eco-med.cl/wp-content/uploads/2022/08/tratamientos.jpg"
+              class="specialty-row group flex items-center justify-between py-5 md:py-8 border-b border-[#ebebeb] px-2 md:px-6 cursor-pointer"
+            >
+              <div class="flex items-center gap-4 md:gap-8">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/tratamientos.jpg" 
+                  alt="Tratamientos faciales Ecomed" 
+                  class="md:hidden w-14 h-14 object-cover rounded-[3px] flex-shrink-0"
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="text-[#8bba34] font-bold text-lg md:text-2xl">10</span>
+                <span class="text-[#000000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight group-hover:text-[#719430] transition-colors">
+                  Tratamientos faciales
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="hidden sm:inline text-xs font-bold text-[#969696] uppercase tracking-wider group-hover:text-[#719430] transition-colors">WhatsApp</span>
+                <span class="text-[#8bba34] group-hover:text-[#719430] text-2xl font-bold transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- SECCIÓN 3: ECOGRAFÍA 5D (id="ecografia-5d") -->
+      <section id="ecografia-5d" class="relative bg-[#f8f8f8] py-20 md:py-28">
+        <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            <!-- Imagen destacada completa (ocupa todo el espacio) -->
+            <div class="lg:col-span-6 order-1">
+              <div class="relative overflow-hidden rounded-[3px] shadow-lg border border-[#ebebeb] bg-[#ffffff]">
+                <img 
+                  src="https://eco-med.cl/wp-content/uploads/2022/08/Slide-Eco5D-ECOMED-01.jpg" 
+                  alt="Ecografía 5D en Ecomed, Santiago Centro" 
+                  class="w-full h-auto object-cover rounded-[3px] block transition-transform duration-500 hover:scale-105"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <!-- Contenido Editorial -->
+            <div class="reveal-on-scroll lg:col-span-6 order-2">
+              
+              <!-- Etiqueta -->
+              <p class="text-[#969696] text-xs font-bold tracking-[0.12em] uppercase mb-2">
+                ECOGRAFÍA EMOCIONAL
+              </p>
+
+              <!-- H2 -->
+              <h2 class="text-[#000000] text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold tracking-[-0.03em] leading-tight mb-5">
+                Ecografía 5D: conoce a tu bebé antes de tenerlo en brazos
+              </h2>
+
+              <!-- Descripción Real -->
+              <p class="text-[#000000] text-base md:text-lg leading-relaxed mb-6">
+                Imágenes reales de alta calidad en 4D/5D HD Live para ver sus gestos y movimientos en tiempo real. Se realiza junto a tu ecografía médica, con personal capacitado.
+              </p>
+
+              <!-- Lista "Te llevas" con detalle de ícono "+" -->
+              <div class="mb-6 bg-[#ffffff] p-5 rounded-[3px] border border-[#ebebeb]">
+                <p class="text-xs font-bold text-[#8bba34] uppercase tracking-wider mb-3">
+                  Te llevas de la sesión:
+                </p>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-[#8bba34]/20 text-[#507210] flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">+</span>
+                    <span class="text-[#000000] text-sm md:text-base font-medium">Fotos impresas de tu bebé</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="w-5 h-5 rounded-full bg-[#8bba34]/20 text-[#507210] flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">+</span>
+                    <span class="text-[#000000] text-sm md:text-base font-medium">El video y las imágenes de la sesión, para verlos las veces que quieras</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Nota informativa -->
+              <p class="text-[#969696] text-xs leading-relaxed mb-7 italic">
+                Antes del examen firmarás un consentimiento informado.
+              </p>
+
+              <!-- CTA a WhatsApp -->
+              <a 
+                href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20informaci%C3%B3n%20para%20agendar%20una%20Ecograf%C3%ADa%205D." 
+                target="_blank" 
+                rel="noopener"
+                class="inline-flex items-center justify-center w-full sm:w-auto min-h-[52px] bg-[#719430] hover:bg-[#8bba34] text-[#ffffff] hover:text-[#000000] px-8 py-3.5 rounded-full font-bold text-base transition-all duration-200 group shadow-md"
+              >
+                <span>Quiero agendar mi Ecografía 5D</span>
+                <span class="ml-2 btn-arrow font-extrabold">→</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- SECCIÓN 4: CÓMO RESERVAR (id="reservar") -->
+      <section id="reservar" class="relative bg-[#ffffff] py-20 md:py-28">
+        <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+          
+          <!-- Header de Sección -->
+          <div class="reveal-on-scroll text-center max-w-[650px] mx-auto mb-14 md:mb-20">
+            <p class="text-[#969696] text-xs font-bold tracking-[0.12em] uppercase mb-2">
+              PASO A PASO
+            </p>
+            <h2 class="text-[#000000] text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.03em] leading-tight">
+              Reserva tu hora como te acomode
+            </h2>
+          </div>
+
+          <!-- Tres Tarjetas (Flex que expande en desktop; en móvil la de WhatsApp va primero) -->
+          <div class="flex flex-col lg:flex-row gap-6 mb-16 items-stretch">
+            
+            <!-- Tarjeta 01: WhatsApp (Destacada en #507210, texto blanco, botón #8bba34 con texto #000000) -->
+            <div class="reserva-card order-1 bg-[#507210] text-[#ffffff] p-8 md:p-10 rounded-[3px] border border-[#507210] flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-[#8bba34] font-bold text-3xl">01</span>
+                  <span class="bg-[#8bba34] text-[#000000] text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Más rápido
+                  </span>
+                </div>
+                <h3 class="text-[#ffffff] text-2xl md:text-3xl font-extrabold tracking-tight mb-3">
+                  Por WhatsApp
+                </h3>
+                <p class="text-[#ffffff]/90 text-base leading-relaxed mb-8">
+                  Escríbenos y te ayudamos a elegir día y hora.
+                </p>
+              </div>
+
+              <!-- Botón #8bba34 con texto #000000 (estricto contraste según sección 0 y 4) -->
+              <a 
+                href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora." 
+                target="_blank" 
+                rel="noopener"
+                class="w-full min-h-[52px] bg-[#8bba34] hover:bg-[#ffffff] text-[#000000] flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-base transition-all duration-200 group shadow-md"
+              >
+                <span>Escribir por WhatsApp</span>
+                <span class="ml-2 btn-arrow font-extrabold">→</span>
+              </a>
+            </div>
+
+            <!-- Tarjeta 02: Agenda en línea (Fondo #f8f8f8, borde #ebebeb) -->
+            <div class="reserva-card order-2 bg-[#f8f8f8] text-[#000000] p-8 md:p-10 rounded-[3px] border border-[#ebebeb] flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-[#8bba34] font-bold text-3xl">02</span>
+                  <span class="text-[#969696] text-xs font-bold uppercase tracking-wider">
+                    24/7
+                  </span>
+                </div>
+                <h3 class="text-[#000000] text-2xl md:text-3xl font-extrabold tracking-tight mb-3">
+                  Agenda en línea
+                </h3>
+                <p class="text-[#000000]/80 text-base leading-relaxed mb-8">
+                  Revisa la disponibilidad y reserva cuando quieras.
+                </p>
+              </div>
+
+              <a 
+                href="https://agendapro.com/iframe/overview/a089cc8d-e81a-41a0-8583-b0e692bac04f" 
+                target="_blank" 
+                rel="noopener"
+                class="w-full min-h-[52px] bg-[#ffffff] hover:bg-[#719430] text-[#000000] hover:text-[#ffffff] border border-[#ebebeb] hover:border-[#719430] flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-base transition-all duration-200 group"
+              >
+                <span>Abrir AgendaPro</span>
+                <span class="ml-1.5 btn-arrow">↗</span>
+              </a>
+            </div>
+
+            <!-- Tarjeta 03: Por teléfono (Fondo #f8f8f8, borde #ebebeb) -->
+            <div class="reserva-card order-3 bg-[#f8f8f8] text-[#000000] p-8 md:p-10 rounded-[3px] border border-[#ebebeb] flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-[#8bba34] font-bold text-3xl">03</span>
+                  <span class="text-[#969696] text-xs font-bold uppercase tracking-wider">
+                    Directo
+                  </span>
+                </div>
+                <h3 class="text-[#000000] text-2xl md:text-3xl font-extrabold tracking-tight mb-3">
+                  Por teléfono
+                </h3>
+                <p class="text-[#000000] font-bold text-lg leading-relaxed mb-8">
+                  +56 9 6229 9667
+                </p>
+              </div>
+
+              <a 
+                href="tel:+56962299667" 
+                class="w-full min-h-[52px] bg-[#ffffff] hover:bg-[#719430] text-[#000000] hover:text-[#ffffff] border border-[#ebebeb] hover:border-[#719430] flex items-center justify-center px-6 py-3.5 rounded-full font-bold text-base transition-all duration-200 group"
+              >
+                <span>Llamar ahora</span>
+                <span class="ml-1.5 btn-arrow">↗</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Pago Transbank -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-6 border-t border-[#ebebeb]">
+            <span class="text-sm font-medium text-[#969696]">Pago con</span>
+            <img 
+              src="https://eco-med.cl/wp-content/uploads/2022/08/transbank.png" 
+              alt="Transbank Webpay" 
+              class="h-7 w-auto object-contain"
+              width="100"
+              height="28"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- SECCIÓN 5: CONTACTO Y UBICACIÓN (id="contacto") -->
+      <section id="contacto" class="relative bg-[#f8f8f8] py-20 md:py-28">
+        <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            
+            <!-- Columna 1: Visítanos -->
+            <div class="reveal-on-scroll lg:col-span-5 flex flex-col justify-between">
+              <div>
+                <p class="text-[#969696] text-xs font-bold tracking-[0.12em] uppercase mb-2">
+                  UBICACIÓN Y HORARIOS
+                </p>
+                <h2 class="text-[#000000] text-3xl sm:text-4xl font-extrabold tracking-[-0.03em] leading-tight mb-6">
+                  Visítanos en Santiago Centro
+                </h2>
+
+                <!-- Dirección con enlace a Google Maps -->
+                <div class="mb-8">
+                  <p class="text-xs font-bold text-[#8bba34] uppercase tracking-wider mb-1">Dirección</p>
+                  <a 
+                    href="https://goo.gl/maps/HXWeAHe2SxAifTMo6" 
+                    target="_blank" 
+                    rel="noopener"
+                    class="text-[#000000] hover:text-[#719430] text-lg font-bold transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <span>Huérfanos 779, Of. 201, Santiago Centro</span>
+                    <span class="text-[#8bba34]">↗</span>
+                  </a>
+                </div>
+
+                <!-- Horarios en Tabla Simple -->
+                <div class="mb-8 bg-[#ffffff] p-5 rounded-[3px] border border-[#ebebeb]">
+                  <p class="text-xs font-bold text-[#8bba34] uppercase tracking-wider mb-3">Horario de atención</p>
+                  <table class="w-full text-sm">
+                    <tbody>
+                      <tr class="border-b border-[#ebebeb]">
+                        <td class="py-2.5 font-medium text-[#000000]">Lunes a Viernes</td>
+                        <td class="py-2.5 text-right font-bold text-[#000000]">09:00 – 19:00 hrs</td>
+                      </tr>
+                      <tr class="border-b border-[#ebebeb]">
+                        <td class="py-2.5 font-medium text-[#000000]">Sábado</td>
+                        <td class="py-2.5 text-right font-bold text-[#000000]">09:00 – 14:00 hrs</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2.5 font-medium text-[#969696]">Domingo</td>
+                        <td class="py-2.5 text-right font-medium text-[#969696]">Cerrado</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Canales Directos -->
+                <div class="space-y-3 mb-8">
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold text-[#8bba34] uppercase w-16">Correo:</span>
+                    <a href="mailto:info@eco-med.cl" class="text-sm font-medium text-[#000000] hover:text-[#719430] transition-colors underline">
+                      info@eco-med.cl
+                    </a>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold text-[#8bba34] uppercase w-16">Teléfono:</span>
+                    <a href="tel:+56962299667" class="text-sm font-medium text-[#000000] hover:text-[#719430] transition-colors">
+                      +56 9 6229 9667
+                    </a>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold text-[#8bba34] uppercase w-16">Instagram:</span>
+                    <a href="https://www.instagram.com/eco_med.cl/" target="_blank" rel="noopener" class="text-sm font-medium text-[#000000] hover:text-[#719430] transition-colors inline-flex items-center gap-1">
+                      <span>@eco_med.cl</span>
+                      <span class="text-[#8bba34]">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Botón Cómo Llegar -->
+              <a 
+                href="https://goo.gl/maps/HXWeAHe2SxAifTMo6" 
+                target="_blank" 
+                rel="noopener"
+                class="inline-flex items-center justify-center w-full min-h-[52px] bg-[#ffffff] hover:bg-[#719430] text-[#000000] hover:text-[#ffffff] border border-[#ebebeb] hover:border-[#719430] px-6 py-3.5 rounded-full font-bold text-base transition-all duration-200 group"
+              >
+                <span>Cómo llegar al centro médico</span>
+                <span class="ml-1.5 btn-arrow">↗</span>
+              </a>
+
+            </div>
+
+            <!-- Columna 2: Escríbenos (Formulario interactivo -> WhatsApp) -->
+            <div class="lg:col-span-7">
+              <div class="bg-[#ffffff] p-6 sm:p-8 md:p-10 rounded-[3px] border border-[#ebebeb] shadow-sm">
+                
+                <h3 class="text-[#000000] text-2xl font-extrabold tracking-tight mb-2">
+                  Escríbenos y coordinamos tu hora
+                </h3>
+                <p class="text-[#969696] text-sm mb-6">
+                  Completa los datos y se abrirá WhatsApp con tu mensaje listo para enviar.
+                </p>
+
+                <form id="contact-form" class="space-y-4">
+                  <!-- Nombre -->
+                  <div>
+                    <label for="form-nombre" class="block text-xs font-bold text-[#000000] uppercase tracking-wider mb-1.5">
+                      Nombre completo *
+                    </label>
+                    <input 
+                      type="text" 
+                      id="form-nombre" 
+                      required 
+                      placeholder="Ej. María González"
+                      class="w-full bg-[#f8f8f8] border border-[#ebebeb] rounded-[3px] px-4 py-3 text-sm text-[#000000] placeholder-[#969696] focus:outline-none focus:border-[#719430] transition-colors"
+                    />
+                  </div>
+
+                  <!-- Teléfono -->
+                  <div>
+                    <label for="form-telefono" class="block text-xs font-bold text-[#000000] uppercase tracking-wider mb-1.5">
+                      Teléfono de contacto *
+                    </label>
+                    <input 
+                      type="tel" 
+                      id="form-telefono" 
+                      required 
+                      placeholder="Ej. +56 9 1234 5678"
+                      class="w-full bg-[#f8f8f8] border border-[#ebebeb] rounded-[3px] px-4 py-3 text-sm text-[#000000] placeholder-[#969696] focus:outline-none focus:border-[#719430] transition-colors"
+                    />
+                  </div>
+
+                  <!-- Especialidad (10 opciones exactas) -->
+                  <div>
+                    <label for="form-especialidad" class="block text-xs font-bold text-[#000000] uppercase tracking-wider mb-1.5">
+                      Especialidad que buscas *
+                    </label>
+                    <select 
+                      id="form-especialidad" 
+                      required
+                      class="w-full bg-[#f8f8f8] border border-[#ebebeb] rounded-[3px] px-4 py-3 text-sm text-[#000000] focus:outline-none focus:border-[#719430] transition-colors"
+                    >
+                      <option value="" disabled selected>Selecciona una especialidad</option>
+                      <option value="Ecografía Médica">01 Ecografía Médica</option>
+                      <option value="Ecografías 5D">02 Ecografías 5D</option>
+                      <option value="Medicina General">03 Medicina General</option>
+                      <option value="Traumatología">04 Traumatología</option>
+                      <option value="Psicología">05 Psicología</option>
+                      <option value="Nutrición">06 Nutrición</option>
+                      <option value="Podología">07 Podología</option>
+                      <option value="Masoterapia">08 Masoterapia</option>
+                      <option value="Camillas Ceragem">09 Camillas Ceragem</option>
+                      <option value="Tratamientos faciales">10 Tratamientos faciales</option>
+                    </select>
+                  </div>
+
+                  <!-- Mensaje (opcional) -->
+                  <div>
+                    <label for="form-mensaje" class="block text-xs font-bold text-[#000000] uppercase tracking-wider mb-1.5">
+                      Preferencia de día o comentario (opcional)
+                    </label>
+                    <textarea 
+                      id="form-mensaje" 
+                      rows="3" 
+                      placeholder="Ej. Prefiero los martes por la mañana."
+                      class="w-full bg-[#f8f8f8] border border-[#ebebeb] rounded-[3px] px-4 py-3 text-sm text-[#000000] placeholder-[#969696] focus:outline-none focus:border-[#719430] transition-colors"
+                    ></textarea>
+                  </div>
+
+                  <!-- Botón Submit -->
+                  <div class="pt-2">
+                    <button 
+                      type="submit" 
+                      class="w-full min-h-[52px] bg-[#719430] hover:bg-[#8bba34] text-[#ffffff] hover:text-[#000000] rounded-full font-bold text-base flex items-center justify-center gap-2 transition-all duration-200 group shadow-md"
+                    >
+                      <span>Enviar y reservar por WhatsApp</span>
+                      <span class="btn-arrow font-extrabold">→</span>
+                    </button>
+                    <p class="text-center text-[#969696] text-xs mt-3">
+                      Se abrirá WhatsApp directamente con la conversación iniciada.
+                    </p>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER MÍNIMO -->
+    <footer class="bg-[#ffffff] border-t border-[#ebebeb] py-10">
+      <div class="max-w-[1200px] mx-auto px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Logo en fondo blanco -->
+        <a href="#inicio" aria-label="Ecomed Centro Médico">
+          <img 
+            src="https://eco-med.cl/wp-content/uploads/2022/08/logo-eecomed-web-1030x619.png" 
+            alt="Logo Ecomed Centro Médico" 
+            class="h-9 w-auto object-contain"
+            width="75"
+            height="40"
+            loading="lazy"
+          />
+        </a>
+
+        <!-- Copyright y dirección -->
+        <p class="text-xs text-[#969696] text-center md:text-left">
+          © 2026 Ecomed · Huérfanos 779, Of. 201, Santiago Centro
+        </p>
+
+        <!-- Instagram -->
+        <a 
+          href="https://www.instagram.com/eco_med.cl/" 
+          target="_blank" 
+          rel="noopener"
+          class="text-xs font-bold text-[#000000] hover:text-[#719430] transition-colors inline-flex items-center gap-1.5"
+        >
+          <span>Instagram @eco_med.cl</span>
+          <span class="text-[#8bba34]">↗</span>
+        </a>
+
+      </div>
+    </footer>
+
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP (58px, #719430, SVG inline blanco, siempre visible) -->
+    <a 
+      href="https://wa.me/56962299667?text=Hola%20Ecomed%2C%20quiero%20reservar%20una%20hora." 
+      target="_blank" 
+      rel="noopener"
+      aria-label="Escribir a Ecomed por WhatsApp"
+      class="fixed bottom-6 right-6 z-50 w-[58px] h-[58px] bg-[#719430] hover:bg-[#8bba34] text-[#ffffff] rounded-full flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105 group"
+    >
+      <!-- WhatsApp SVG Icon Inline -->
+      <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+
+
+    <!-- INTERACTION SCRIPTS (Vanilla JS, 0 external runtime libraries) -->
+    <script>
+      (function() {
+        // 1. Scroll Progress Bar & Dynamic Header
+        const progressBar = document.getElementById('scroll-progress');
+        const navbar = document.getElementById('navbar');
+
+        function updateScroll() {
+          const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+          if (progressBar) {
+            progressBar.style.width = scrolled + '%';
+          }
+
+          if (navbar) {
+            if (winScroll > 30) {
+              navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.94)';
+              navbar.style.backdropFilter = 'blur(10px)';
+              navbar.style.webkitBackdropFilter = 'blur(10px)';
+            } else {
+              navbar.style.backgroundColor = '#ffffff';
+              navbar.style.backdropFilter = 'none';
+              navbar.style.webkitBackdropFilter = 'none';
+            }
+          }
+        }
+
+        window.addEventListener('scroll', updateScroll, { passive: true });
+        updateScroll();
+
+        // 2. Section Titles Smooth Reveal on Scroll (IntersectionObserver)
+        if ('IntersectionObserver' in window) {
+          const revealElements = document.querySelectorAll('.reveal-on-scroll');
+          const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15 });
+
+          revealElements.forEach(function(el) {
+            observer.observe(el);
+          });
+        }
+
+        // 3. Specialty Row Desktop Hover Preview (-4deg rotation, fade 250ms)
+        const previewContainer = document.getElementById('specialty-preview');
+        const previewImg = document.getElementById('specialty-preview-img');
+        const specialtyRows = document.querySelectorAll('.specialty-row');
+
+        if (previewContainer && previewImg && window.innerWidth > 900) {
+          let mouseX = 0;
+          let mouseY = 0;
+
+          document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+          }, { passive: true });
+
+          specialtyRows.forEach(function(row) {
+            row.addEventListener('mouseenter', function() {
+              const imgSrc = row.getAttribute('data-preview');
+              if (imgSrc) {
+                previewImg.src = imgSrc;
+                const safeX = Math.min(window.innerWidth - 300, mouseX + 24);
+                const safeY = Math.max(80, Math.min(window.innerHeight - 220, mouseY - 100));
+                previewContainer.style.left = safeX + 'px';
+                previewContainer.style.top = safeY + 'px';
+                previewContainer.classList.remove('opacity-0');
+                previewContainer.classList.add('opacity-100');
+              }
+            });
+
+            row.addEventListener('mousemove', function() {
+              const safeX = Math.min(window.innerWidth - 300, mouseX + 24);
+              const safeY = Math.max(80, Math.min(window.innerHeight - 220, mouseY - 100));
+              previewContainer.style.left = safeX + 'px';
+              previewContainer.style.top = safeY + 'px';
+            });
+
+            row.addEventListener('mouseleave', function() {
+              previewContainer.classList.remove('opacity-100');
+              previewContainer.classList.add('opacity-0');
+            });
+          });
+        }
+
+        // 4. Contact Form Submission via WhatsApp
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+          contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (!contactForm.checkValidity()) {
+              contactForm.reportValidity();
+              return;
+            }
+
+            const nombre = (document.getElementById('form-nombre').value || '').trim();
+            const telefono = (document.getElementById('form-telefono').value || '').trim();
+            const especialidad = (document.getElementById('form-especialidad').value || '').trim();
+            const mensaje = (document.getElementById('form-mensaje').value || '').trim();
+
+            if (!nombre || !telefono || !especialidad) {
+              return;
+            }
+
+            // Required copy structure:
+            // "Hola Ecomed, soy [nombre], mi teléfono es [teléfono]. Quiero reservar una hora de [especialidad]. [mensaje]"
+            let textMessage = 'Hola Ecomed, soy ' + nombre + ', mi teléfono es ' + telefono + '. Quiero reservar una hora de ' + especialidad + '.';
+            if (mensaje) {
+              textMessage += ' ' + mensaje;
+            }
+
+            const waUrl = 'https://wa.me/56962299667?text=' + encodeURIComponent(textMessage);
+            
+            // Dispatch navigation without popup blocking
+            const link = document.createElement('a');
+            link.href = waUrl;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
